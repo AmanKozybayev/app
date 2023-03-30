@@ -81,7 +81,22 @@ import { useState } from 'react';
 //     </div>
 //   )
 // }
+// function App() {
 
+//   const [textColor, setTextColor] = useState("black");
+
+//   return(
+//     <div>
+//       <button onClick={() => {
+//         setTextColor(textColor === "black" ? "red" : "black");
+//       }}>
+//         Change text color 
+//       </button>
+//       <h1 style={ {color: textColor} }> My color is my color, change me!</h1>
+
+//     </div>
+//   );
+// }
 
 
 export default App;
