@@ -98,5 +98,23 @@ import { useState } from 'react';
 //   );
 // }
 
+// homework 
+
+function App() {
+
+  const [count, setCount] = useState(0);
+
+  return (
+    <div className='App'>
+      <button onClick={() => {
+        setCount(count+1)
+      }}>Increase</button>
+      <button onClick={() => {setCount(count-1)}}>Decrese</button>
+      <button onClick={() => {setCount(0)}}>Set to zero</button>
+      <h1>{count}</h1>
+    </div>
+  )
+}
+
 
 export default App;
