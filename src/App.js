@@ -100,21 +100,53 @@ import { useState } from 'react';
 
 // homework 
 
-function App() {
+// function App() {
 
-  const [count, setCount] = useState(0);
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <div className='App'>
+//       <button onClick={() => {
+//         setCount(count+1)
+//       }}>Increase</button>
+//       <button onClick={() => {setCount(count-1)}}>Decrese</button>
+//       <button onClick={() => {setCount(0)}}>Set to zero</button>
+//       <h1>{count}</h1>
+//     </div>
+//   )
+// }
+
+
+// export default App;
+
+function App() {
+  const [toDoList, setToDoList] = useState([]);
+  const [newTask, setNewTask] = useState("");
+
+  const handleChange = (event) => {
+    setNewTask(event.target.value);
+  }
+
+  const addTask = () => {
+    const newToDoList = [...toDoList,newTask];
+    setToDoList(newToDoList);
+  }
 
   return (
     <div className='App'>
-      <button onClick={() => {
-        setCount(count+1)
-      }}>Increase</button>
-      <button onClick={() => {setCount(count-1)}}>Decrese</button>
-      <button onClick={() => {setCount(0)}}>Set to zero</button>
-      <h1>{count}</h1>
+      <div className='addTask'>
+        <input onChange={handleChange}/>
+        <button onClick={addTask}> Add Task </button>
+      </div>
+      <div className='list'>
+        {toDoList.map((task)=>{
+          return <h1>{task}</h1>
+        })}
+      </div>
+
     </div>
+
+
   )
 }
-
-
 export default App;
